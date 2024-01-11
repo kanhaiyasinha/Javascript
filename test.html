@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task</title>
+</head>
+<body>
+  <ul id="item-list">
+    <li>
+      Item 1 <button class="delete-button">Delete</button>
+    </li>
+    <li>
+      Item 2 <button class="delete-button">Delete</button>
+    </li>
+    <li>
+      Item 3 <button class="delete-button">Delete</button>
+    </li>
+  </ul>
+  <button id="remove-all-button">Remove All</button>
+
+  <script>
+    // Task 1: Add individual delete button functionality
+    const deleteButtons = document.querySelectorAll('.delete-button');
+
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const listItem = this.parentElement;
+        listItem.style.display = 'none';
+      });
+    });
+
+    // Task 2: Add Remove All button functionality
+    const removeAllButton = document.getElementById('remove-all-button');
+    const itemList = document.getElementById('item-list');
+
+    removeAllButton.addEventListener('click', function() {
+      itemList.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
